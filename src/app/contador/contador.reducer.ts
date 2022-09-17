@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from "@ngrx/store";
+import {createReducer, on } from "@ngrx/store";
 import { decrementar, incrementar } from "./contador.actions";
 
 export const initialState =20;
