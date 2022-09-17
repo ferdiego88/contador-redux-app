@@ -17,9 +17,7 @@ export class AppComponent {
 
 
   constructor(private store: Store<AppState>) {
-      this.store.subscribe(state => {
-        this.contador = state.contador
-      });
+      this.store.select('contador').subscribe(contador => this.contador = contador );
 
   }
 
