@@ -3,21 +3,6 @@ import { decrementar, incrementar } from "./contador.actions";
 
 export const initialState =20;
 
-// UNA FORMA ANTIGUA CREAR UN REDUCER
-// export function contadorReducer(state: number = 10, action: Action) {
-
-//   switch (action.type) {
-//       case incrementar.type:
-//           return state + 1;
-//       case decrementar.type:
-//           return state - 1;
-//       default:
-//         return state;
-//     }
-// }
-
-
-
 //SEGUN LA DOCUMENTACIOND DE NGRX
 export const contadorReducer = createReducer(
   initialState,
