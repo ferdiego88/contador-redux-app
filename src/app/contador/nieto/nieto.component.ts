@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducers';
+import { reset } from '../contador.actions';
 
 @Component({
   selector: 'app-nieto',
@@ -9,7 +12,15 @@ export class NietoComponent  {
 
  contador = 0;
 
- reset() {
-
+ constructor(private store: Store<AppState>) {
+    this.store.select('contador').subscribe(contador => {
+      this.contador = contador
+    })
  }
+
+
+ reset() {
+   this.store.dispatch(reset());
+ }
+
 }
