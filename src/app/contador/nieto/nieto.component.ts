@@ -13,9 +13,7 @@ export class NietoComponent  {
  contador = 0;
 
  constructor(private store: Store<AppState>) {
-    this.store.select('contador').subscribe(contador => {
-      this.contador = contador
-    })
+    this.store.select('contador').subscribe(contador => this.contador = contador)
  }
 
 
